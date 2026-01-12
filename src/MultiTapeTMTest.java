@@ -14,8 +14,16 @@ public class MultiTapeTMTest {
     }
 
     @Test
-    public void testInitialization() {
+    public void testInit() {
+        builder.add("q_START", "*,*", "q_END", "_,_", "S,S");
+        MultiTapeTM tm = builder.build();
+
+        assertEquals("Should start in defined start state", "q_START", tm.getCurrentState());
+        assertEquals("Step count should be 0", 0, tm.getSteps());
+        assertEquals("Should have 2 tapes", 2, tm.getTapes().size());
+        assertFalse("Should not be halting initially", tm.isHalting());
     }
+
 
 
     @Test

@@ -14,8 +14,18 @@ public class TapeTest {
 
     @Test
     public void testInitState() {
-        // tape should start blank
+        // tape should start blank or empty
         assertEquals("New tape should read blank symbol", "#", tape.read());
+        assertEquals("New tape content should be empty String", "", tape.content());
+    }
+
+    @Test
+    public void testReadWrite() {
+        tape.write("A");
+        assertEquals("should read back the symbol", "A", tape.read());
+
+        tape.write("B");
+        assertEquals("should overwrite the previous value", "B", tape.read());
     }
 
 
@@ -37,5 +47,23 @@ public class TapeTest {
         assertEquals("value at index 1 should stay", "Y", tape.read());
     }
 
+    @Test
+    public void testLoadContent() {
+        String input = "101";
+        tape.load(input);
+
+        // check if head is reset to start
+        assertEquals("1st char matches", "1", tape.read());
+
+        tape.moveHead(Move.RIGHT);
+        assertEquals("2nd char matches", "0", tape.read());
+
+        tape.moveHead(Move.RIGHT);
+        assertEquals("3rd char matches", "1", tape.read());
+
+        // 4 th char  - auto blank
+        tape.moveHead(Move.RIGHT);
+        assertEquals("should be blank", "#", tape.read());
+    }
 
 }
