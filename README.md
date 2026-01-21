@@ -26,10 +26,10 @@ Stroj používa 4 pásky:
 5. Unárne na binárne - výsledná unárna hodnota z ACC sa prevedie späť do binárnej sústavy pomocou delenia dvoma a zapíše sa na pásku OUT
 
 ## Štruktúra projektu a požiadavky
--Main.java hlavná a vstupná trieda, obsahuje definíciu prechodových funkcií (pravidlá) a spúšta simuláciu
--MultiTapeTM.java: Jadro simulátora (vykonávanie krokov, posun hláv a správa stavov)
--TMBuilder.java: pattern Builder, pomocná trieda pre definovanie pravidiel turingovho stroja
--Tape.java: predstavuje "nekonečnú" pásku, implementovanú cez hashmap. Operácie načítania, zápisu a posunu hlavy
+- Main.java hlavná a vstupná trieda, obsahuje definíciu prechodových funkcií (pravidlá) a spúšta simuláciu
+- MultiTapeTM.java: Jadro simulátora (vykonávanie krokov, posun hláv a správa stavov)
+- TMBuilder.java: pattern Builder, pomocná trieda pre definovanie pravidiel turingovho stroja
+- Tape.java: predstavuje "nekonečnú" pásku, implementovanú cez hashmap. Operácie načítania, zápisu a posunu hlavy
 
 Projekt potrebuje Java JDK 21 (vyvíjané v Eclipse Temurin 21 )
 
