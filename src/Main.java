@@ -146,7 +146,7 @@ public class Main {
 
         b.add("q_DIV_HAS_PAIR", "*,*,*,*", "q_DIV_SCAN", "_,_,_,_", "S,S,S,S");
 
-        // erite resulting bit to tape 0 - IN
+        // erite resulting bit to tape 0  (IN)
         b.add("q_WRITE_BIT_0", "*,*,*,*", "q_RESTORE_ACC_START", "0,_,_,_", "R,S,S,S");
         b.add("q_WRITE_BIT_1", "*,*,*,*", "q_RESTORE_ACC_START", "1,_,_,_", "R,S,S,S");
 
@@ -164,7 +164,7 @@ public class Main {
         b.add("q_RESTORE_REWIND_ACC_ONLY", "*,x,*,*", "q_RESTORE_REWIND_ACC_ONLY", "_,_,_,_", "S,L,S,S");
         b.add("q_RESTORE_REWIND_ACC_ONLY", "*,#,*,*", "q_DIV_SCAN",                "_,_,_,_", "S,R,S,S");
 
-        // reverse bits (t0 -> t3)
+        // reverse bits,  move from t0 IN to t3 OUT)
         b.add("q_FIN_REVERSE_BITS", "*,*,*,*", "q_REV_MOVE_LEFT", "_,_,_,_", "L,S,S,S");
         b.add("q_REV_MOVE_LEFT",    "0,*,*,*", "q_REV_MOVE_LEFT", "_,_,_,0", "L,S,S,R");
         b.add("q_REV_MOVE_LEFT",    "1,*,*,*", "q_REV_MOVE_LEFT", "_,_,_,1", "L,S,S,R");

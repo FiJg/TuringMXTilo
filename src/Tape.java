@@ -77,7 +77,7 @@ public class Tape {
         return viewWindow(DEFAULT_WINDOW_SIZE);
     }
 
-    // Record for window view
+    // record for window view
     public record WindowView(String contentStr, String pointerStr) {}
 
 
